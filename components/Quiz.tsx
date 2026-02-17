@@ -11,28 +11,84 @@ gsap.registerPlugin(ScrollTrigger);
 
 const questions = [
     {
+        question: "Dimana pertama kali kita ketemu?",
+        options: ["Di Sekolah", "Di Mall", "Lewat Online", "Di OSIS"],
+        correct: 3,
+        emoji: "👋",
+        success: "Bener! Di OSIS, awal mula segalanya 🥹",
+        error: "Masa lupa sih sayangku? 😤",
+    },
+    {
         question: "Apa makanan favorit kita pas lagi ngedate?",
         options: ["Seblak", "Mie Ayam", "Martabak", "Ice Cream"],
         correct: 1,
         emoji: "🍜",
-        success: "Yass! You know me so well! 🍜",
-        error: "Salah huu, masa gatau sih? 😤",
+        success: "Yass! Mie Ayam emang the best! 🍜",
+        error: "Waduh salah, masa gatau sih? 😤",
     },
     {
-        question: "Apa yang paling penting dari hubungan?",
-        options: ["Kepercayaan", "Uang", "Trust & Communication", "Social Media"],
-        correct: 2,
-        emoji: "💬",
-        success: "Bener banget! Komunikasi dan trust itu segalanya! 💕",
-        error: "Hmm.. bukan itu sayang, coba lagi yaa 🥺",
+        question: "Lagu apa yang jadi lagu 'kita banget'?",
+        options: ["Alexandra - Reality Club", "Perfect - Ed Sheeran", "Aku Milikmu - Dewa 19", "Bersamamu - Jazz"],
+        correct: 0,
+        emoji: "🎵",
+        success: "Alexandra - Reality Club, lagu kita banget karena pertama kali kita ekspos di IG! 🎶💕",
+        error: "Bukan itu sayangku, dengerin lagi deh 😘",
     },
     {
-        question: "Hal apa yang paling aku suka dari kamu?",
-        options: ["Your Eyes", "Your Kindness", "Everything", "Your Cooking"],
+        question: "Apa panggilan sayang kita satu sama lain?",
+        options: ["bubub", "Sayang", "Cinta", "Yang"],
+        correct: 1,
+        emoji: "🥰",
+        success: "Iya dong, Sayang! Panggilan paling manis,simple,tulus,dan romantis 💗",
+        error: "Hmm bukan itu deh, coba lagi yaa 🥺",
+    },
+    {
+        question: "Kita keluar bareng pertama kemana?",
+        options: ["Nonton Bioskop", "Ngegym Bareng", "Makan di Resto", "Jalan di Taman"],
+        correct: 1,
+        emoji: "�",
+        success: "Yes! Ngegym bareng, unik banget firstly kita! 😂❤️",
+        error: "Waduh lupa ya? Itu momen berharga loh 🥺",
+    },
+    {
+        question: "Apa kebiasaan kita yang paling sering dilakuin bareng?",
+        options: ["chatingan Malam", "Masak Bareng", "Olahraga", "Nonton Film"],
+        correct: 0,
+        emoji: "📱",
+        success: "Bener! chatingan malam itu udah ritual kita! 🌙",
+        error: "Bukan itu sayang, yang tiap malam itu loh 😉",
+    },
+    {
+        question: "Kalo kita lagi berantem, siapa yang biasanya minta maaf duluan?",
+        options: ["Kamu", "Aku", "Dua-duanya", "Gapernah berantem"],
         correct: 2,
-        emoji: "💖",
-        success: "Aww! You are my everything! ❤️",
-        error: "Bener sih, tapi ada yang lebih tepat! 😘",
+        emoji: "🤗",
+        success: "Yes! Karena kita sama-sama nggak kuat marahan lama 🥹💕",
+        error: "Hmm, yang bener itu kita berdua kok 😘",
+    },
+    {
+        question: "Apa impian terbesar kita berdua?",
+        options: ["Punya Rumah", "Keliling Dunia", "Hidup Sukses & Bahagia Bareng", "Jadi Dewasa"],
+        correct: 2,
+        emoji: "✨",
+        success: "Yang penting kita sukses & bahagia bareng, itu udah sangat sangat cukup 🥹❤️",
+        error: "Semua penting, tapi satu ini yang paling utama 💫",
+    },
+    {
+        question: "Hal kecil apa yang bikin hubungan kita spesial?",
+        options: ["Hadiah Mahal", "Selalu Ada Satu Sama Lain", "Liburan Mewah", "Foto Bareng"],
+        correct: 1,
+        emoji: "�",
+        success: "Bener banget! Kehadiran kita satu sama lain itu segalanya 🤍",
+        error: "Yang paling berharga itu bukan materi loh sayang 💕",
+    },
+    {
+        question: "Dimana kira pertama kali untuk memutuskan saling berkomitmen dan saling menyayangi dan mencintai?",
+        options: ["Di Chat", "Di Telepon", "Di Omah Prahu", "Di Sekolah"],
+        correct: 2,
+        emoji: "💝",
+        success: "Omah Prahu waduk cengklik, tempat paling bersejarah buat kita, dimana semuanya bermula! 🥹❤️",
+        error: "Masa lupa tempat se spesial itu sih sayang 😢�",
     },
 ];
 
@@ -72,9 +128,9 @@ export default function Quiz() {
             if (cardRef.current) {
                 gsap.fromTo(
                     cardRef.current,
-                    { y: 60, opacity: 0, scale: 0.95 },
+                    { y: 40, opacity: 0 },
                     {
-                        y: 0, opacity: 1, scale: 1, duration: 0.8, ease: "power3.out",
+                        y: 0, opacity: 1, duration: 0.6, ease: "power2.out",
                         scrollTrigger: {
                             trigger: cardRef.current,
                             start: "top 85%",
@@ -92,16 +148,16 @@ export default function Quiz() {
         if (!cardRef.current) return;
         gsap.fromTo(
             cardRef.current,
-            { x: 60, opacity: 0, rotateY: 5 },
-            { x: 0, opacity: 1, rotateY: 0, duration: 0.6, ease: "power3.out" }
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }
         );
 
         // Stagger option buttons
         const validOptions = optionRefs.current.filter(Boolean) as HTMLButtonElement[];
         gsap.fromTo(
             validOptions,
-            { y: 30, opacity: 0, scale: 0.9 },
-            { y: 0, opacity: 1, scale: 1, duration: 0.5, stagger: 0.08, ease: "back.out(1.5)", delay: 0.2 }
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.4, stagger: 0.06, ease: "power2.out", delay: 0.15 }
         );
     }, []);
 
@@ -124,68 +180,79 @@ export default function Quiz() {
         }
     }, [currentQuestion, answered]);
 
+    // Warm reminder messages for wrong answers
+    const wrongReminders = [
+        "Coba diingat lagi sayang, pasti kamu bisa! 🥰",
+        "Hmm bukan itu deh, ayo coba lagi ya! 💕",
+        "Nggak apa-apa, pikirin lagi pelan-pelan ya sayang 🌸",
+        "Almost! Coba sekali lagi, aku percaya kamu pasti ingat 💖",
+        "Hehe bukan itu, tapi gapapa, coba lagi yuk! 🥺",
+    ];
+
     const handleAnswer = (index: number) => {
         if (answered !== null) return; // prevent double click
         setAnswered(index);
         const correct = index === questions[currentQuestion].correct;
         setIsCorrect(correct);
 
-        // Animate selected button
         const btn = optionRefs.current[index];
-        if (btn) {
-            gsap.to(btn, {
-                scale: correct ? 1.05 : 0.95,
-                duration: 0.3,
-                ease: correct ? "back.out(2)" : "power2.out",
-            });
-        }
-
-        // Shake wrong answers
-        if (!correct && btn) {
-            const tl = gsap.timeline();
-            tl.to(btn, { x: -8, duration: 0.08 })
-                .to(btn, { x: 8, duration: 0.08 })
-                .to(btn, { x: -6, duration: 0.08 })
-                .to(btn, { x: 6, duration: 0.08 })
-                .to(btn, { x: 0, duration: 0.08 });
-        }
 
         if (correct) {
+            // ✅ Correct: small inline feedback + advance
+            if (btn) {
+                gsap.to(btn, { scale: 1.02, duration: 0.2, ease: "power2.out" });
+            }
             setScore(score + 1);
-            // Mini confetti burst
-            confetti({
-                particleCount: 30,
-                spread: 50,
-                origin: { y: 0.7 },
-                colors: ["#f43f5e", "#fb7185", "#fda4af"],
-            });
-        }
 
-        // Auto advance after delay
-        setTimeout(() => {
-            if (currentQuestion < questions.length - 1) {
-                // Slide out
-                if (cardRef.current) {
-                    gsap.to(cardRef.current, {
-                        x: -60, opacity: 0, rotateY: -5, duration: 0.3, ease: "power2.in",
-                        onComplete: () => {
-                            setCurrentQuestion(currentQuestion + 1);
-                            setAnswered(null);
-                            setIsCorrect(null);
-                        },
+            // Auto advance after showing success text
+            setTimeout(() => {
+                if (currentQuestion < questions.length - 1) {
+                    setCurrentQuestion(currentQuestion + 1);
+                    setAnswered(null);
+                    setIsCorrect(null);
+                } else {
+                    setQuizDone(true);
+                    confetti({
+                        particleCount: 100,
+                        spread: 80,
+                        origin: { y: 0.5 },
+                        colors: ["#f43f5e", "#fb7185", "#fda4af", "#fff1f2"],
                     });
                 }
-            } else {
-                setQuizDone(true);
-                // Big confetti
-                confetti({
-                    particleCount: 120,
-                    spread: 90,
-                    origin: { y: 0.5 },
-                    colors: ["#f43f5e", "#fb7185", "#fda4af", "#fff1f2"],
-                });
+            }, 2500);
+        } else {
+            // ❌ Wrong: gentle shake + warm reminder, then let them retry
+            if (btn) {
+                const tl = gsap.timeline();
+                tl.to(btn, { x: -6, duration: 0.06 })
+                    .to(btn, { x: 6, duration: 0.06 })
+                    .to(btn, { x: -4, duration: 0.06 })
+                    .to(btn, { x: 0, duration: 0.06 });
             }
-        }, correct ? 1200 : 1800);
+
+            const randomReminder = wrongReminders[Math.floor(Math.random() * wrongReminders.length)];
+
+            Swal.fire({
+                title: "Hmm, bukan itu sayang.. 🥺",
+                text: randomReminder,
+                icon: "info",
+                confirmButtonText: "Coba Lagi 💕",
+                confirmButtonColor: "#f43f5e",
+                background: "#fff1f2",
+                color: "#881337",
+                customClass: {
+                    popup: "rounded-2xl",
+                },
+            }).then(() => {
+                // Reset so they can try again
+                setAnswered(null);
+                setIsCorrect(null);
+                // Reset button scale
+                optionRefs.current.forEach((b) => {
+                    if (b) gsap.set(b, { scale: 1, x: 0 });
+                });
+            });
+        }
     };
 
     const resetQuiz = () => {
@@ -248,11 +315,11 @@ export default function Quiz() {
             </div>
 
             {/* ── Quiz Card ── */}
-            <div className="w-full max-w-2xl relative z-10" style={{ perspective: "800px" }}>
+            <div className="w-full max-w-2xl relative z-10">
                 {!quizDone ? (
                     <div
                         ref={cardRef}
-                        className="bg-white/80 backdrop-blur-md rounded-3xl shadow-[0_8px_40px_rgba(244,63,94,0.1),0_2px_8px_rgba(0,0,0,0.04)] border border-rose-100/60 p-8 md:p-10 text-center"
+                        className="bg-white/90 rounded-3xl shadow-lg border border-rose-100/60 p-8 md:p-10 text-center"
                     >
                         {/* Question emoji */}
                         <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-rose-100 to-pink-100 flex items-center justify-center text-3xl shadow-sm">
@@ -270,11 +337,14 @@ export default function Quiz() {
                                 let btnStyle = "bg-white hover:bg-rose-50 border-rose-200/60 text-rose-900 hover:border-rose-300 hover:shadow-md";
 
                                 if (answered !== null) {
-                                    if (index === q.correct) {
-                                        btnStyle = "bg-emerald-50 border-emerald-400 text-emerald-700 shadow-emerald-100 shadow-md ring-2 ring-emerald-200";
+                                    if (isCorrect && index === q.correct) {
+                                        // Only show green if CORRECT answer was chosen
+                                        btnStyle = "bg-emerald-50 border-emerald-400 text-emerald-700 shadow-md ring-2 ring-emerald-200";
                                     } else if (index === answered && !isCorrect) {
-                                        btnStyle = "bg-red-50 border-red-300 text-red-500 shadow-red-100";
-                                    } else {
+                                        // Show red on the wrong selected answer
+                                        btnStyle = "bg-red-50 border-red-300 text-red-500";
+                                    } else if (isCorrect) {
+                                        // Dim other options only when correct
                                         btnStyle = "bg-gray-50 border-gray-200 text-gray-400 opacity-60";
                                     }
                                 }
@@ -296,14 +366,14 @@ export default function Quiz() {
                                     >
                                         <span className={`
                                             w-8 h-8 rounded-lg flex-shrink-0 flex items-center justify-center text-sm font-bold
-                                            ${answered !== null && index === q.correct
+                                            ${isCorrect && answered !== null && index === q.correct
                                                 ? "bg-emerald-400 text-white"
                                                 : answered !== null && index === answered && !isCorrect
                                                     ? "bg-red-400 text-white"
                                                     : "bg-rose-100 text-rose-500"
                                             }
                                         `}>
-                                            {answered !== null && index === q.correct
+                                            {isCorrect && answered !== null && index === q.correct
                                                 ? "✓"
                                                 : answered !== null && index === answered && !isCorrect
                                                     ? "✗"
@@ -316,13 +386,10 @@ export default function Quiz() {
                             })}
                         </div>
 
-                        {/* Feedback text */}
-                        {answered !== null && (
-                            <div className={`mt-6 p-4 rounded-xl text-sm font-medium font-sans ${isCorrect
-                                ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                                : "bg-rose-50 text-rose-600 border border-rose-200"
-                                }`}>
-                                {isCorrect ? q.success : q.error}
+                        {/* Feedback text - only for correct answers */}
+                        {answered !== null && isCorrect && (
+                            <div className="mt-6 p-4 rounded-2xl text-base font-semibold font-sans bg-emerald-50 text-emerald-700 border border-emerald-200 text-center">
+                                {q.success}
                             </div>
                         )}
                     </div>
@@ -350,10 +417,12 @@ export default function Quiz() {
 
                         <p className="text-rose-600 text-lg font-sans mb-8 font-medium">
                             {score === questions.length
-                                ? "PERFECT! Kamu emang yang paling ngerti aku! 🥹❤️"
-                                : score >= 2
-                                    ? "Hampir sempurna! Kamu emang pacar yang perhatian 💕"
-                                    : "Yaudah gapapa, yang penting kamu sayang aku kan? 😘"
+                                ? "PERFECT! Kamu emang yang paling ngerti hubungan kita! 🥹❤️"
+                                : score >= 8
+                                    ? "Hampir sempurna! Kamu emang pasangan yang luar biasa! 💕"
+                                    : score >= 5
+                                        ? "Lumayan! Tapi masih banyak yang harus diingat ya sayang �"
+                                        : "Yaudah gapapa, yang penting kita tetap sayang kan? 🥺�"
                             }
                         </p>
 

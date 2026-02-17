@@ -1,4 +1,5 @@
 import './globals.css'
+import MusicPlayer from "@/components/MusicPlayer";
 import { Cookie, Nunito, Dancing_Script } from 'next/font/google' // Light romantic fonts
 
 const serif = Cookie({ subsets: ['latin'], variable: '--font-serif', weight: ['400'] })
@@ -17,7 +18,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={`${serif.variable} ${sans.variable} ${script.variable} font-sans antialiased`}>{children}</body>
+            <body className={`${serif.variable} ${sans.variable} ${script.variable} font-sans antialiased`}>
+                <MusicPlayer />
+                {children}
+            </body>
         </html>
     )
 }

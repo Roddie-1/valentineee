@@ -4,6 +4,8 @@ import Quiz from "@/components/Quiz";
 import ValentineQuestion from "@/components/ValentineQuestion";
 import Reasons from "@/components/Reasons";
 import Timeline from "@/components/Timeline";
+import Closing from "@/components/Closing";
+import ValentineUs from "@/components/ValentineUs";
 
 export default function Home() {
     return (
@@ -14,10 +16,11 @@ export default function Home() {
             <Quiz />
             <Reasons />
             <ValentineQuestion />
+            <ValentineUs />
+            <Closing />
 
-            <footer className="py-8 text-center text-primary/60 text-sm">
-                <p>Made with ❤️ for you</p>
-            </footer>
+
+
         </main>
     );
 }
