@@ -10,7 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const memories = [
-    { id: 1, src: "/assets/10.jpg", title: "Our First Moment", date: "The Beginning" },
+    { id: 1, src: "/assets/10.JPG", title: "Our First Moment", date: "The Beginning" },
     { id: 2, src: "/assets/02.jpg", title: "hunting accsesories", date: "alamak tak nemu laa aksesoris disini" },
     { id: 3, src: "/assets/03.jpg", title: "night graduationt", date: "menggemparkan viska" },
     { id: 4, src: "/assets/04.jpg", title: "Organization us", date: "Foto yb osis" },
@@ -19,7 +19,7 @@ const memories = [
     { id: 7, src: "/assets/07.jpg", title: "night viska", date: "ampunn maamaaa" },
     { id: 8, src: "/assets/08.jpg", title: "kekuclukan", date: "ntah apa lah iniii" },
     { id: 9, src: "/assets/09.jpg", title: "hunting mie ayam", date: "fikss kita harus kesini lagii" },
-    { id: 10, src: "/assets/01.JPG", title: "classmeet viska", date: "school date di labas" },
+    { id: 10, src: "/assets/01.jpg", title: "classmeet viska", date: "school date di labas" },
 ];
 
 // Pinterest masonry heights
